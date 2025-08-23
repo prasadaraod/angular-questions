@@ -1,0 +1,73 @@
+<p>directive-questions works!</p>
+<!-- from angular 17 @if is introduces and *ngIf going to deprecate -->
+ <!-- structure directives going to deprecate and blocks are used insted of it -->
+
+<!-- ng if directive  -->
+ <h2>Structural directives </h2>
+ <ul>
+    <!-- <li *ngIf="students.length>0"> Two Students</li>
+    <li *ngIf="students.length===0"> Zero Students </li> -->
+
+    @if(students.length > 0) {
+        <li>Two Students</li>
+    }
+    @if(students.length === 0) {
+        <li> Zero students </li>
+    }
+ </ul>
+ <!-- ng for directive -->
+  
+  <ul>
+    <!-- <li *ngFor="let student of students; index as i"> {{student}}</li> -->
+
+    @for (student of students; track $index) {
+        <li>{{$index}} - {{student}}</li>
+    }
+  </ul>
+  <br>
+  <h3>Subjects</h3>
+  <ul>
+    @for (subject of subjects; track $index) {
+        <li>{{subject}}</li>
+    }
+  </ul>
+  <br/>
+  <!-- ngswitch directive -->
+   <h3> No of Subjects</h3>
+   <!-- <ul [ngSwitch]="subjects.length">
+        <li *ngSwitchCase=0>Zero Subjects</li>
+        <li *ngSwitchCase=1>One Subject</li>
+        <li *ngSwitchCase=2>Two Subjects</li>
+        <li *ngSwitchCase=3>Three Subjects</li>
+        <li *ngSwitchDefault>More Subjects</li>
+   </ul> -->
+   @switch (subjects.length) {
+        @case (0) {
+            <p>Zero Subjects</p>
+        }
+        @case (1) {
+            <p>One Subject</p>
+        }
+        @case (2) {
+            <p>Two Subjects</p>
+        }
+        @case (3) {
+            <p>Three Subjects</p>
+        }
+        @default {
+            <p>More Subjects</p>
+        }
+   }
+
+   <h2>Attribute Directives</h2>
+   <button (click)="changeBgColor('red')">red color </button>  
+   <span style="width: 50px;"> &nbsp;</span>
+   <button (click)="changeBgColor('blue')"> blue color </button>
+   <br>
+   <!-- ng style directive -->
+    <p style="background-color: {{bgColor}}"> general inline css style </p>
+    <!-- <p style="background-color: {bgColor}"> general inline css style </p> -->
+    <p [ngStyle]="{'background-color': bgColor}"> Ng style usage one </p>
+
+    <!-- Ng Class directive -->
+     <p [ngClass]="cssClassName" > Ng Class Usage one</p>

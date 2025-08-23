@@ -1,0 +1,15 @@
+<!-- String interpolation binding -->
+<p> {{strData}}</p>
+<!-- Property binding -->
+ <p [innerHTML]="title"></p>
+ <input type="text" name="username" [disabled]="isUsernameDisabled" />
+ <!-- Event binding -->
+  <br/>
+  <button (click)="greet()" >check </button> 
+  <br/>
+  <button (click)="add(3,5)">add</button>
+  <br/>
+  <!-- two way data binding -->
+   <input type="text" [(ngModel)]="txtName" />
+   <br/>
+   <div>{{txtName}}</div>

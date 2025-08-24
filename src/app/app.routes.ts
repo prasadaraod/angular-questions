@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { BindQuestions } from './bind-questions/bind-questions';
 import { DirectiveQuestions } from './directive-questions/directive-questions';
 import { Pipes } from './pipes/pipes';
+import { Parent } from './parent/parent';
 
 export const routes: Routes = [
     {
@@ -12,5 +13,8 @@ export const routes: Routes = [
     },
     {
         path: 'pipes', component: Pipes
+    },
+    {
+        path: 'parent-child', component: Parent
     }
 ];

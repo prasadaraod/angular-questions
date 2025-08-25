@@ -1,0 +1,6 @@
+
+<div style="border: 1px solid gray; width: 400px; padding: 10px 30px; margin: 20px;">
+    <p>parent component</p>
+    {{messageFromChild}}
+    <app-output-decorator-child (sendMessageEmitter)="receiveMessageFromChild($event)"></app-output-decorator-child>
+</div>

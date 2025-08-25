@@ -4,3 +4,9 @@
     <input [(ngModel)]="txtInput" />
     <app-child [msgFromParent]="txtInput"></app-child>
 </div>
+<div style="border: 1px solid gray; width: 400px; padding: 10px 30px; margin: 20px;">
+    <p>with out parent child </p>
+    <input [(ngModel)]="txtInputTwo" />
+    <p>same component binding</p>
+    {{txtInputTwo}}
+</div>

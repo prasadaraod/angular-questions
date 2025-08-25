@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class Parent implements OnInit {
   txtInput = '';
   dataFromParent = "hi from parent";
+  txtInputTwo = '';
   ngOnInit(): void {
       console.log('parent component initialization');
   }

@@ -1,0 +1,25 @@
+ul.header-nav {
+    padding-left: 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.header-nav > li {
+    list-style: none;
+    background-color: white;
+}
+.header-nav > li > a {
+    color: #000;
+    display: block;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+.header-nav > li > a:hover {
+    color: white;
+    background-color: lightgreen;
+}
+a.active-link {
+    color: white;
+    background-color: lightseagreen;
+    
+}

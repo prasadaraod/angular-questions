@@ -8,6 +8,7 @@ import { LifeCycleHooks } from './life-cycle-hooks/life-cycle-hooks';
 import { SynchronousAsynchronous } from './synchronous-asynchronous/synchronous-asynchronous';
 import { ObservableOne } from './observable-one/observable-one';
 import { ObserverError } from './observer-error/observer-error';
+import { ObserverComplete } from './observer-complete/observer-complete';
 
 export const routes: Routes = [
     {
@@ -37,4 +38,7 @@ export const routes: Routes = [
     {
         path: 'observable-error', component: ObserverError
     },
+    {
+        path: 'observable-complete', component: ObserverComplete
+    }
 ];

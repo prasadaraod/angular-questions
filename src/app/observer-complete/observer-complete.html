@@ -1,1 +1,8 @@
 <p>observer-complete works!</p>
+<div>
+    @for (item of data; track $index) {
+        <div class="list-item">{{item}}</div>
+    }
+</div>
+<!-- <div *ngFor="let dataItem of data; index as i"> {{dataItem}}</div> -->
+<button (click)="getAsyncData()"> Get Data </button>

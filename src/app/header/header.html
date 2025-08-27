@@ -1,11 +1,14 @@
-<ul>
-    <li> <a routerLink="/"> Home </a> </li>
-    <li><a routerLink="/binding"> binding</a></li>
-    <li><a routerLink="/directive"> Directive </a></li>
-    <li><a routerLink="/pipes">Pipes</a></li>
-    <li><a routerLink="/parent-child"> parent child</a></li>
-    <li><a routerLink="/output-decorator"> Output decorator</a></li>
-    <li><a routerLink="/life-cycle-hooks">Life Cycle Hooks</a></li>
-    <li><a routerLink="/synchronous-asynchronous"> Synchronous and ASynchronous Tasks</a></li>
-    <li><a routerLink="/observable-one"> Observable one</a></li>
+<ul class="header-nav">
+    <li> <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"> Home </a> </li>
+    <li><a routerLink="/binding" routerLinkActive="active-link"> binding</a></li>
+    <li><a routerLink="/directive" routerLinkActive="active-link"> Directive </a></li>
+    <li><a routerLink="/pipes" routerLinkActive="active-link">Pipes</a></li>
+    <li><a routerLink="/parent-child" routerLinkActive="active-link"> parent child</a></li>
+    <li><a routerLink="/output-decorator" routerLinkActive="active-link"> Output decorator</a></li>
+    <li><a routerLink="/life-cycle-hooks" routerLinkActive="active-link">Life Cycle Hooks</a></li>
+    <li><a routerLink="/synchronous-asynchronous" routerLinkActive="active-link"> Synchronous and ASynchronous Tasks</a></li>
+    <li><a routerLink="/observable-one" routerLinkActive="active-link"> Observable one</a></li>
+    <li><a routerLink="/observable-error" routerLinkActive="active-link"> Observable with Error Scenario</a></li>
+    <li><a routerLink="/observable-complete" routerLinkActive="active-link"> Observer Complete streeming</a></li>
+    <li><a routerLink="/students"> Students</a></li>
 </ul>

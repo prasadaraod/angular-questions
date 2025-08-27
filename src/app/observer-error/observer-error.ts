@@ -27,26 +27,30 @@ export class ObserverError implements OnInit {
   ngOnInit(): void {
   }
 
-  // in this function
-  // first reading all the data at once and assign to data array
-  // in second step reading data one by one
-  // in second step observed that view is not changing
-  // find the problem that when we are pushing the data  change is not detecting
-  // so we used change detection strategy , change detect ref from core
-  // change detect ref intialised in constructor
-  // when we push new data to data array then calling detect changes
-  // now working 
   getAsyncData() {
-
-    this.myObservable.subscribe((val: any)=> {
-      this.data.push(val);
-      this.cdf.detectChanges();
-      console.log('val', val);
-    },
-  (err)=> {
-    alert(err.message);
-  },()=> {
-    alert('All the data is streamed');
-  });
+    this.myObservable.subscribe({
+        next:(val: any) => {
+          console.log('val ', val);
+          this.data.push(val);
+          this.cdf.detectChanges();
+        }, error(err) {
+          console.log('error', err.message );
+          alert(err.message);
+        },
+        complete() {
+          console.log('All streaming completed');
+          alert('All the data is streamed');
+        }
+      })
+    // this.myObservable.subscribe((val: any)=> {
+    //   this.data.push(val);
+    //   this.cdf.detectChanges();
+    //   console.log('val', val);
+    // },
+    // (err)=> {
+    //   alert(err.message);
+    // },()=> {
+    //   alert('All the data is streamed');
+    // });
   }
 }

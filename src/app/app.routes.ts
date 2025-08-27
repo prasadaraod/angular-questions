@@ -9,6 +9,7 @@ import { SynchronousAsynchronous } from './synchronous-asynchronous/synchronous-
 import { ObservableOne } from './observable-one/observable-one';
 import { ObserverError } from './observer-error/observer-error';
 import { ObserverComplete } from './observer-complete/observer-complete';
+import { Students } from './students/students';
 
 export const routes: Routes = [
     {
@@ -40,5 +41,8 @@ export const routes: Routes = [
     },
     {
         path: 'observable-complete', component: ObserverComplete
+    },
+    {
+        path: 'students', component: Students
     }
 ];

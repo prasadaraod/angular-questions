@@ -10,6 +10,8 @@ import { ObservableOne } from './observable-one/observable-one';
 import { ObserverError } from './observer-error/observer-error';
 import { ObserverComplete } from './observer-complete/observer-complete';
 import { Students } from './students/students';
+import { TemplateForm } from './template-form/template-form';
+import { ReactForm } from './react-form/react-form';
 
 export const routes: Routes = [
     {
@@ -44,5 +46,11 @@ export const routes: Routes = [
     },
     {
         path: 'students', component: Students
+    },
+    {
+        path: 'template-form', component: TemplateForm
+    },
+    {
+        path: 'reactive-form', component: ReactForm
     }
 ];

@@ -15,6 +15,12 @@ export class LifeCycleHooks implements OnInit {
   ngOnInit(): void {
       console.log('ngOnInit');
   }
+  ngAfterViewInit(){
+    console.log('ng after view init');
+  }
+  ngAfterViewChecked(){
+    console.log('ng after view checked');
+  }
 
   ngOnDestroy() {
     console.log('on destory');

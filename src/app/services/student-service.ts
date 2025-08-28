@@ -11,7 +11,7 @@ interface IStudent {
   providedIn: 'root'
 })
 export class StudentService {
-  private _studentsApiUrl = "dta/students.json";
+  private _studentsApiUrl = "data/students.json";
 
   constructor(private http: HttpClient){}
   

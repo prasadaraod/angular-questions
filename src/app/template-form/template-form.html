@@ -1,0 +1,114 @@
+<p>template-form works!</p>
+<!-- <form #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm)">
+    <div>
+        <label> Username</label> :
+        <input type="text" name="email" required />
+    </div>
+    <div>
+        <label> Password </label> :
+        <input type="password" name="password" />
+    </div>
+    <div>
+        <button [disabled]="loginForm.invalid"> Submit</button>
+    </div>
+</form> <br/> -->
+<!-- app.component.html -->
+<!-- <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="user.name" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="user.email" required email>
+  </div>
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form> <br/> -->
+<!-- <form #heroForm="ngForm" (ngSubmit)="onHeroSubmit(heroForm)">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      required
+      minlength="4"
+      [(ngModel)]="model.name"
+      #name="ngModel"
+    />
+    <div
+      *ngIf="name.invalid && (name.dirty || name.touched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="name.errors?.required">Name is required.</div>
+      <div *ngIf="name.errors?.minlength">
+        Name must be at least {{ name.errors?.minlength.requiredLength }}
+        characters long.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="alterEgo">Alter Ego</label>
+    <input
+      type="text"
+      class="form-control"
+      id="alterEgo"
+      name="alterEgo"
+      [(ngModel)]="model.alterEgo"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-success" [disabled]="!heroForm.valid">
+    Submit
+  </button>
+</form> -->
+<!-- app.component.html -->
+<form #myForm="ngForm" (ngSubmit)="onAnotherSubmit(myForm)">
+  <div>
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      ngModel
+      required
+      minlength="3"
+      #nameInput="ngModel"
+    />
+    @if (nameInput.invalid && (nameInput.dirty || nameInput.touched || myForm.submitted)) {
+      @if (nameInput.errors?.['required']) {
+        <div class="error-message">Name is required.</div>
+      }
+      @if (nameInput.errors?.['minlength']) {
+        <div class="error-message">Name must be at least 3 characters long.</div>
+      }
+    }
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      ngModel
+      required
+      email
+      #emailInput="ngModel"
+    />
+    @if (emailInput.invalid && (emailInput.dirty || emailInput.touched || myForm.submitted)) {
+      @if (emailInput.errors?.['required']) {
+        <div class="error-message">Email is required.</div>
+      }
+      @if (emailInput.errors?.['email']) {
+        <div class="error-message">Invalid email format.</div>
+      }
+    }
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>
+
+<pre>{{ myForm.value | json }}</pre>

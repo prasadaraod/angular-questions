@@ -32,7 +32,8 @@ export class ObserverError implements OnInit {
         next:(val: any) => {
           console.log('val ', val);
           this.data.push(val);
-          this.cdf.detectChanges();
+          // this.cdf.detectChanges();
+          this.cdf.markForCheck();
         }, error(err) {
           console.log('error', err.message );
           alert(err.message);

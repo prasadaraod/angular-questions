@@ -5,6 +5,7 @@ import { JsonPipe } from '@angular/common';
 interface User {
   name: string;
   email: string;
+  gender?: string;
 }
 
 @Component({
@@ -16,12 +17,14 @@ interface User {
 export class TemplateForm implements OnInit {
   user: User = {
     name: '',
-    email: ''
+    email: '',
+    gender: ''
   };
    model = {
     name: '',
     alterEgo: '',
   };
+  selectedGender = '';
   constructor(){}
   ngOnInit(): void {
   }

@@ -7,13 +7,14 @@ import { StudentService } from '../services/student-service';
   imports: [],
   templateUrl: './students.html',
   styleUrl: './students.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers:[StudentService]
 })
 export class Students implements OnInit {
 
   students: any[] = [];
   public errorMessage: any;
-  constructor(private studentService: StudentService, private cdf: ChangeDetectorRef){}
+  constructor(private studentService: StudentService){}
   ngOnInit(): void {
     console.log('inside students ngoninit');
       this.studentService.getStudents()
@@ -26,10 +27,13 @@ export class Students implements OnInit {
       //   }
       // )
       .subscribe({
-        next: data => this.students = data,
+        next: data => {
+          this.students = data;
+          // this.cdf.detectChanges();
+        },
         error: errorReceived =>{
           this.errorMessage = errorReceived.message;
-          this.cdf.detectChanges();
+          // this.cdf.detectChanges();
         } 
       }
       )

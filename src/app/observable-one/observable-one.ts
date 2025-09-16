@@ -53,7 +53,8 @@ export class ObservableOne implements OnInit {
 
     this.myObservable.subscribe((val: any)=> {
       this.data.push(val);
-      this.cdf.detectChanges();
+      // this.cdf.detectChanges();
+      this.cdf.markForCheck();
       console.log('val', val);
     });
   }

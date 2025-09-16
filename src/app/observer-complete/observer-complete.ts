@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
   selector: 'app-observer-complete',
   imports: [],
   templateUrl: './observer-complete.html',
-  styleUrl: './observer-complete.css'
+  styleUrl: './observer-complete.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ObserverComplete implements OnInit {
   data:any[] = [];
@@ -32,7 +33,8 @@ export class ObserverComplete implements OnInit {
         next:(val: any) => {
           console.log('val ', val);
           this.data.push(val);
-          this.cdf.detectChanges();
+          // this.cdf.detectChanges();
+          this.cdf.markForCheck();
         }, error(err) {
           console.log('error', err.message )
         },
